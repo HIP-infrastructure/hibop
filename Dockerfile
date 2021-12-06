@@ -17,7 +17,7 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install --no-install-recommends -y \ 
     curl unzip libgomp1 && \
-    curl -O -L https://github.com/hbp-HiBoP/HiBoP/releases/download/${APP_VERSION}/HiBoP.${APP_VERSION}.linux64.zip && \
+    curl -OL# https://github.com/hbp-HiBoP/HiBoP/releases/download/${APP_VERSION}/HiBoP.${APP_VERSION}.linux64.zip && \
     mkdir ./install && \
     unzip -q -d ./install HiBoP.${APP_VERSION}.linux64.zip && \
     chmod 755 ./install/HiBoP.${APP_VERSION}.linux64/HiBoP.x86_64 && \
