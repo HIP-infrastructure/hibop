@@ -27,7 +27,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-ENV APP_SHELL="no"
+ENV APP_SPECIAL="no"
 ENV APP_CMD="/apps/${APP_NAME}/install/HiBoP.${APP_VERSION}.linux64/HiBoP.x86_64"
 ENV PROCESS_NAME="/apps/${APP_NAME}/install/HiBoP.${APP_VERSION}.linux64/HiBoP.x86_64"
 ENV APP_DATA_DIR_ARRAY=".config/unity3d"
