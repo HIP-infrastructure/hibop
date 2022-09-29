@@ -1,6 +1,7 @@
 ARG CI_REGISTRY_IMAGE
-ARG DAVFS2_VERSION
-FROM ${CI_REGISTRY_IMAGE}/nc-webdav:${DAVFS2_VERSION}
+ARG DOCKERFS_TYPE
+ARG DOCKERFS_VERSION
+FROM ${CI_REGISTRY_IMAGE}/${DOCKERFS_TYPE}:${DOCKERFS_VERSION}
 LABEL maintainer="nathalie.casati@chuv.ch"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -16,7 +17,8 @@ WORKDIR /apps/${APP_NAME}
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install --no-install-recommends -y \ 
-    curl unzip libgomp1 && \
+    curl unzip libgomp1 libgtk-3-0 libglib2.0-0 \
+    libglib2.0-0 dbus-x11 at-spi2-core && \
     curl -OL# https://github.com/hbp-HiBoP/HiBoP/releases/download/${APP_VERSION}/HiBoP.${APP_VERSION}.linux64.zip && \
     mkdir ./install && \
     unzip -q -d ./install HiBoP.${APP_VERSION}.linux64.zip && \
