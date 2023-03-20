@@ -21,7 +21,7 @@ RUN apt-get update && \
     apt-get install --no-install-recommends -y \ 
     curl unzip libgomp1 libgtk-3-0 libglib2.0-0 \
     libglib2.0-0 dbus-x11 at-spi2-core && \
-    curl -OL# https://github.com/hbp-HiBoP/HiBoP/releases/download/${APP_VERSION}/HiBoP.${APP_VERSION}.linux64.zip && \
+    curl -sSOL https://github.com/hbp-HiBoP/HiBoP/releases/download/${APP_VERSION}/HiBoP.${APP_VERSION}.linux64.zip && \
     mkdir ./install && \
     unzip -q -d ./install HiBoP.${APP_VERSION}.linux64.zip && \
     chmod 755 ./install/HiBoP.${APP_VERSION}.linux64/HiBoP.x86_64 && \
